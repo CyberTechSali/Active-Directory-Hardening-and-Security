@@ -1,61 +1,66 @@
-<div align="center">
+<p align="center">
+  <img src="https://img.shields.io/badge/Projet-Audit%20AD-blue?style=for-the-badge&logo=microsoft" />
+  <img src="https://img.shields.io/badge/Statut-Terminé-brightgreen?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Outils-PingCastle%20%7C%20Mimikatz-orange?style=for-the-badge&logo=security" />
+  <img src="https://img.shields.io/badge/Niveau-Critique-red?style=for-the-badge" />
+</p>
 
-# 🔐 Active Directory Security Audit & Hardening Report
-## Domain: cybertechsali.com
+# Audit de sécurité Active Directory – cybertechsali.com
 
-[![Audit Status](https://img.shields.io/badge/Status-Completed-brightgreen?style=flat-square&logo=github)](/)
-[![Report Version](https://img.shields.io/badge/Report%20Version-2.0-blue?style=flat-square)](/)
-[![Risk Level](https://img.shields.io/badge/Risk%20Level-CRITICAL%20→%20MEDIUM-orange?style=flat-square)](/)
-[![PingCastle Score](https://img.shields.io/badge/PingCastle-55%2F100-red?style=flat-square&logo=windows)](/)
-[![Purple Knight](https://img.shields.io/badge/Purple%20Knight-82%25%20(Grade%20C)-red?style=flat-square&logo=windows)](/)
-
-[![License](https://img.shields.io/badge/License-Confidential-darkred?style=flat-square)](LICENSE)
-[![Last Update](https://img.shields.io/badge/Last%20Updated-December%202025-blue?style=flat-square)](/)
-[![Documentation](https://img.shields.io/badge/Documentation-Complete-success?style=flat-square)](docs/)
-
-**Assessment Period:** November - December 2025  
-**Auditor:** Ouchahed salma
-**Organization:** CyberSecure Solutions
+**Période** : Novembre – Décembre 2025  
+**Auteur** : OUCHAHEd SALMA
 
 ---
 
-</div>
+## Contexte
 
-## 📋 Table of Contents
-
-- [Executive Summary](#executive-summary)
-- [Key Metrics](#-key-metrics)
-- [Findings Overview](#findings-overview)
-- [Exploitation Demonstration](#exploitation-demonstration)
-- [Remediation Actions](#remediation-actions)
-- [Screenshots & Evidence](#-screenshots--evidence)
-- [Implementation Roadmap](#implementation-roadmap)
-- [Documentation](#documentation)
-- [Quick Links](#quick-links)
+Ce projet est un audit de sécurité complet de l'Active Directory `cybertechsali.com`. L'objectif était d'identifier les vulnérabilités critiques, de démontrer leur impact par l'exploitation, et de proposer un plan de durcissement validé techniquement.
 
 ---
 
-## 🎯 Executive Summary
+## Outils utilisés
 
-The cybertechsali.com Active Directory infrastructure presented a **CRITICAL security posture** with multiple vulnerabilities enabling complete domain compromise in under 5 minutes.
-
-### Quick Facts
-
-| Metric | Value | Status |
-|--------|-------|--------|
-| **Assessment Tools** | 4 (PingCastle, Purple Knight, BloodHound, Mimikatz) | ✅ Complete |
-| **Critical Findings** | 5 P0 issues | ✅ All Fixed in Phase 1 |
-| **Attack Paths Demonstrated** | 3 main vectors | ✅ Neutralized |
-| **Exploitation Time** | < 5 minutes to domain admin | ✅ Remediated |
-| **Risk Reduction** | 80% in Phase 1 | ✅ In Progress |
-| **Remediation Timeline** | 6 months (3 phases) | ⏳ Executing |
+| Outil | Version | Usage |
+| :--- | :--- | :--- |
+| **PingCastle** | 3.2.1 | Analyse des risques et scoring global |
+| **Purple Knight** | Community | Détection des indicateurs d'exposition (IOEs) |
+| **BloodHound** | 8.3.1 | Cartographie des chemins d'attaque et actifs Tier 0 |
+| **Mimikatz** | 2.2.0 | Extraction des secrets (DCSync, Pass-the-Hash, Pass-the-Ticket) |
 
 ---
 
-## 📊 Key Metrics
+## Résultats clés
 
-### Audit Scores
+| Métrique | Résultat |
+| :--- | :--- |
+| **Score PingCastle** | 55/100 (Risque élevé) |
+| **Indicateurs d'exposition (Purple Knight)** | 17 IOEs |
+| **Actifs Tier 0 identifiés** | 25 objets (dont 5 comptes administrateurs) |
+| **Temps de compromission démontré** | Moins de 5 minutes |
 
-PingCastle Assessment
+---
 
+## Top 3 des vulnérabilités exploitées
 
+1. **Print Spooler actif sur le DC** → DCSync (extraction de tous les hashs du domaine).
+2. **Comptes administrateurs déléguables** → Vol de tickets Kerberos (Pass-the-Ticket).
+3. **NTLMv1/LM activé** → Pass-the-Hash (shell administrateur en 30 secondes).
+
+---
+
+## Plan de remédiation
+
+| Phase | Actions | Statut |
+| :--- | :--- | :--- |
+| **Urgent (Sem. 1-2)** | Désactivation du Spooler, rotation des mots de passe, flag "non déléguable" | ✅ Terminé |
+| **Structurel (Sem. 3-8)** | Déploiement LAPS, Credential Guard, groupe Protected Users | ⏳ En cours |
+| **Gouvernance (Mois 2-6)** | SIEM, monitoring Events 4768/4769, modèle Tier 0/1/2 | 📅 Planifié |
+
+---
+
+## Validation des correctifs
+
+**Avant durcissement** (Pass-the-Hash réussi) :
+```powershell
+sekurlsa::pth /user:karim-adm /ntlm:fa7665bef... /run:cmd
+# ✅ Shell ADMIN obtenu.
