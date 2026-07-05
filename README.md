@@ -86,7 +86,4 @@ Audit enabled: Security events 4768 (TGT) and 4769 (TGS) are now successfully lo
 
 https://Preuves/06_Remediation_Klist_Validation.png
 
-Disclaimer
-⚠️ This project contains confidential information (internal domain names, NTLM hashes, network topology).
-The repository is private and must not be shared publicly.
-Intended for lab use or advanced cybersecurity training purposes only.
+
