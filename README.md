@@ -1,129 +1,120 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/Audit-Active%20Directory-blue?style=for-the-badge&logo=microsoft" alt="Active Directory"/>
-  <img src="https://img.shields.io/badge/Methodology-Offensive%20%26%20Defensive-red?style=for-the-badge&logo=datadog" alt="Offensive & Defensive"/>
-  <img src="https://img.shields.io/badge/Status-Correctifs%20Validés-brightgreen?style=for-the-badge" alt="Status"/>
-  <img src="https://img.shields.io/badge/Tools-PingCastle%20%7C%20BloodHound%20%7C%20Mimikatz-orange?style=for-the-badge&logo=security" alt="Tools"/>
+  <img src="https://img.shields.io/badge/Mission-Cyber%20Resilience-0A0A2A?style=for-the-badge&logo= defender" />
+  <img src="https://img.shields.io/badge/Status-Operation%20Completed-brightgreen?style=for-the-badge&logo=checkmarx" />
+  <img src="https://img.shields.io/badge/Framework-ANSSI%20%7C%20MITRE%20ATT&CK-red?style=for-the-badge&logo=mitre" />
+  <img src="https://img.shields.io/badge/Type-Red%20Team%20%26%20Blue%20Team-blue?style=for-the-badge&logo=datadog" />
 </p>
 
-<h1 align="center">🛡️ Audit de Sécurité & Durcissement Active Directory</h1>
-<p align="center">
-  <b>Domaine :</b> cybertechsali.com &nbsp;|&nbsp; 
-  <b>Période :</b> Nov. 2025 - Déc. 2025 &nbsp;|&nbsp; 
-  <b>Auditeur :</b> OUCHAHEd SALMA
-</p>
+<br>
+
+<div align="center">
+  <h1>⚔️ ACTIVE DIRECTORY : <br> AUDIT OFFENSIF & DURCISSEMENT</h1>
+  <p>
+    <i>De l'énumération silencieuse à la compromission totale en 5 minutes, <br> jusqu'à la mise en place d'une défense en profondeur.</i>
+  </p>
+  <br>
+  <p>
+    <b>👤 Auditeur :</b> OUCHAHEd SALMA &nbsp;|&nbsp; 
+    <b>🎯 Cible :</b> cybertechsali.com &nbsp;|&nbsp; 
+    <b>📅 Périmètre :</b> Nov. - Déc. 2025
+  </p>
+</div>
 
 ---
 
-## 📌 Contexte du Projet
+## 📊 TABLEAU DE BORD EXÉCUTIF
 
-Ce projet consiste en un audit de sécurité complet de l'infrastructure Active Directory (AD) du domaine `cybertechsali.com`. L'objectif principal était d'évaluer la posture de sécurité actuelle, d'identifier les vecteurs d'attaque critiques et de proposer un plan de remédiation concret, allant de la théorie à la validation pratique des correctifs.
-
-L'audit a suivi une approche en trois phases :
-- **Évaluation automatisée** (PingCastle, Purple Knight)
-- **Exploitation pratique** (BloodHound, Mimikatz)
-- **Remédiation et validation** (GPO, durcissement NTLM/Kerberos)
-
----
-
-## 🗺️ Périmètre Technique
-
-| Élément | Détail |
-| :--- | :--- |
-| **Domaine** | `cybertechsali.com` |
-| **Niveau fonctionnel** | Windows Server 2016 |
-| **Contrôleurs de domaine** | 1 (DC1 - `192.168.1.1`) |
-| **Poste compromis (Lab)** | 1 (POST55) |
-| **Comptes critiques testés** | `Administrator`, `karim-adm`, `sali-adm`, `hajar.lamini` |
-
----
-
-## 🛠️ Stack Technique Utilisée
-
-L'audit a utilisé une stack d'outils de l'industrie pour garantir une couverture maximale (du statique à l'exploitation dynamique) :
-
-| Outil | Version | Rôle dans l'audit |
+| Métrique | Résultat | Évaluation |
 | :--- | :--- | :--- |
-| **PingCastle** | 3.2.1+ | Analyse passive des risques et scoring global. |
-| **Purple Knight** | Community | Vérification de 118 indicateurs de sécurité (IOEs) et mapping avec le référentiel ANSSI. |
-| **BloodHound** | 8.3.1 (CE) | Cartographie des relations de confiance (Tier Zero) et visualisation des chemins d'attaque. |
-| **Mimikatz** | 2.2.0 | Extraction des secrets mémoire (credential dumping), DCSync, Pass-the-Hash/Ticket. |
-| **SharpHound** | 2.8.0 | Collecteur de données pour alimenter BloodHound. |
+| **Score de Risque Global (PingCastle)** | `55 / 100` | 🔴 **Risque Critique** (Sous la moyenne secteur) |
+| **Indicateurs d'Exposition (Purple Knight)** | `17 IOEs` | 🟠 Faiblesses structurelles majeures |
+| **Actifs Tier Zero identifiés** | `25 objets` | 🟣 5 comptes administrateurs en ligne de mire |
+| **Temps de Compromission (Exploit)** | `< 5 minutes` | ⏱️ Attaque fulgurante (Mimikatz) |
+| **Vecteurs d'attaque validés** | `3 chaînes` | 🚪 Print Spooler, PtH, PtT |
+| **Correctifs critiques appliqués** | `5 actions` | ✅ Pass-the-Hash désormais bloqué |
 
 ---
 
-## 📊 Verdict Global & Scores
+## 🧠 LA PHILOSOPHIE DE L'AUDIT
 
-La convergence des outils a classé l'infrastructure comme **"Critically At-Risk"** avant correction.
+> *"La sécurité ne se résume pas à une checklist de conformité. Un vrai audit doit prouver l'impact opérationnel en enchaînant les vulnérabilités, avant de proposer des remédiations vérifiables."*
 
-| Outil | Score obtenu | Niveau de risque |
+Ce projet ne s'est pas arrêté à un simple scan passif. J'ai suivi une méthodologie en **3 actes** :
+
+1. **🔍 Reconnaissance Automatisée** : Cartographie complète de l'AD avec PingCastle, Purple Knight et BloodHound.
+2. **💀 Exploitation & Mouvement Latéral** : Passage à l'action avec Mimikatz pour démontrer les scénarios du monde réel (Pass-the-Hash, DCSync).
+3. **🛡️ Durcissement & Validation** : Application des GPO, vérification des événements de sécurité et test de régression pour prouver l'efficacité des correctifs.
+
+---
+
+## 🛠️ LA STACK TECHNIQUE (Les Armes du Pentester)
+
+| Outil | Version | Mission |
 | :--- | :--- | :--- |
-| **PingCastle** | **55 / 100** | 🔴 **Risque Élevé** (25ème-35ème percentile, très inférieur à la moyenne du secteur). |
-| **Purple Knight** | **82% (Grade C)** | 🟠 Faiblesses critiques de configuration (17 Indicateurs d'Exposition). |
-| **BloodHound** | 25 actifs Tier Zero | 🟣 5 comptes utilisateurs (dont Administrateur) identifiés comme cibles absolues. |
-| **Exploitation (Mimikatz)** | Compromis en < 5 min | 🔴 Extraction des hashs NTLM, tickets Kerberos et accès Admin sans connaître le mot de passe. |
+| <img src="https://img.icons8.com/color/20/000000/checkmark.png"/> **PingCastle** | 3.2.1+ | Évaluation du score de risque et détection des failles de configuration. |
+| <img src="https://img.icons8.com/color/20/000000/shield.png"/> **Purple Knight** | CE | Audit des 118 indicateurs de sécurité (ANSSI, MITRE ATT&CK). |
+| <img src="https://img.icons8.com/color/20/000000/blood.png"/> **BloodHound** | 8.3.1 | Cartographie des relations de confiance (Tier Zero) et visualisation des attaques. |
+| <img src="https://img.icons8.com/color/20/000000/lock--v1.png"/> **Mimikatz** | 2.2.0 | Extraction des secrets, vol de tickets Kerberos et DCSync. |
+| <img src="https://img.icons8.com/color/20/000000/console.png"/> **SharpHound** | 2.8.0 | Collecte de données pour alimenter BloodHound. |
 
 ---
 
-## ⚠️ Top 3 des Vecteurs d'Attaque Démontrés
+## ⛓️ LA CHAÎNE D'ATTAQUE DÉMONTÉE (Kill Chain)
 
-L'exploitation pratique a validé 3 chaînes d'attaque indépendantes menant à la compromission totale :
+Voici le chemin réellement emprunté par l'attaquant (moi) pour passer d'un simple utilisateur à un contrôleur de domaine :
 
-| # | Vecteur d'attaque | Temps d'exécution | Impact démontré |
+| Étape | Technique | Outil | Résultat |
 | :--- | :--- | :--- | :--- |
-| **1** | **Print Spooler → DCSync** | ~2 minutes | Extraction de tous les hashs du domaine via `lsadump::dcsync`. |
-| **2** | **Pass-the-Ticket (Kerberos)** | ~3 minutes | Impersonnalisation du compte `karim-adm` en injectant son TGT volé. |
-| **3** | **Pass-the-Hash (NTLM)** | ~30 secondes | Obtention d'un shell `cmd.exe` interactif sous l'identité `karim-adm` sans connaître le mot de passe. |
+| **1. Reconnaissance** | Énumération LDAP | SharpHound | Cartographie de 9 users, 52 groups, 2 computers. |
+| **2. Accès initial** | Connexion standard | (Lab) | Poste POST55 compromis (utilisateur standard). |
+| **3. Escalade (PtT)** | Vol du ticket Kerberos | Mimikatz | Extraction du TGT de `karim-adm` (Admin). |
+| **4. Mouvement Latéral** | Pass-the-Hash | Mimikatz | Shell `cmd.exe` sous identité `karim-adm`. |
+| **5. Prise de contrôle** | DCSync | Mimikatz | Extraction de TOUS les hashs du domaine (`lsadump::dcsync`). |
 
 ---
 
-## 🛡️ Plan de Remédiation & Durcissement
+## 🏆 TOP 3 DES VULNÉRABILITÉS CRITIQUES (AVANT CORRECTION)
 
-Face à ces risques, un plan de correction en trois phases a été établi et **partiellement validé en laboratoire** :
-
-| Phase | Délai | Actions menées | Statut |
+| # | Faiblesse | Exploit démontré | Gravité |
 | :--- | :--- | :--- | :--- |
-| **Phase 1 (Urgent)** | Semaines 1-2 | 🔹 Désactivation du service Spooler sur le DC.<br>🔹 Activation du flag *"Account is sensitive and cannot be delegated"*.<br>🔹 Changement des mots de passe administrateurs.<br>🔹 Restriction de l'authentification à **Kerberos/AES-256 uniquement**. | ✅ **Appliqué & Validé** |
-| **Phase 2 (Structurel)** | Semaines 3-8 | 🔹 Déploiement de **Microsoft LAPS** (gestion des mots de passe locaux).<br>🔹 Activation de **Credential Guard** sur les postes.<br>🔹 Ajout des admins au groupe **Protected Users**.<br>🔹 Activation du mode *Restricted Admin* pour RDP. | ⏳ En cours d'implémentation |
-| **Phase 3 (Gouvernance)** | Mois 2-6 | 🔹 Implémentation du modèle d'administration **Tier 0/1/2**.<br>🔹 Déploiement d'un **SIEM** avec monitoring des Events 4768/4769.<br>🔹 Mise en place de l'approche **Just-In-Time (JIT)** admin. | 📅 Planifié |
+| **1** | **Service Print Spooler actif sur le DC** | Coercition NTLM vers DCSync (extraction des hashs). | 🚨 **Critique** |
+| **2** | **Comptes Admin déléguables** | Vol du ticket Kerberos et impersonnalisation (`Pass-the-Ticket`). | 🚨 **Critique** |
+| **3** | **NTLMv1 & LM autorisés** | Réutilisation du hash NTLM (`Pass-the-Hash`). Shell Admin en 30s. | 🔥 **Urgent** |
 
 ---
 
-## ✅ Validation des Correctifs (NTLM/Kerberos)
+## 🛡️ LE PLAN DE REMÉDIATION (De l'Urgence à la Gouvernance)
 
-Pour prouver l'efficacité du durcissement, des tests post-remédiation ont été menés :
+Le rapport propose un échelonnement temporel pour une mise en œuvre sans rupture de service.
 
-1. **Service KDC** : Vérifié comme opérationnel (`Running`) avec un DNS résolvant correctement les SRV records.
-2. **GPO dédiée** : Création de `GPO-Security-Authentication` (bonne pratique de ne pas toucher à la GPO Default Domain Policy).
-3. **Restriction NTLM** : Passage du paramètre *"LAN Manager Authentication Level"* à **"Send NTLMv2 response only. Refuse LM"**.
-4. **Validation Kerberos** : Exécution de `klist` confirmant que les tickets sont désormais émis avec du chiffrement **AES-256-CTS-HMAC-SHA1-96**.
-5. **Traçabilité SIEM** : Activation des audits de sécurité sur les événements **4768** (TGT) et **4769** (TGS), essentiels pour détecter les réutilisations de tickets.
+### 🚨 PHASE 1 : URGENT (Semaine 1-2)
+*Actions immédiates pour stopper l'hémorragie.*
+- [x] **Désactivation du Spooler** sur le DC (`Stop-Service Spooler`).
+- [x] **Protection des comptes Admin** (Flag "Sensitive and cannot be delegated" activé).
+- [x] **Rotation des mots de passe** des comptes critiques (Admin, krbtgt).
+- [x] **Durcissement NTLM** : Refus de LM/NTLMv1, passage en NTLMv2 uniquement.
+
+### ⚙️ PHASE 2 : STRUCTUREL (Semaine 3-8)
+*Renforcement de la posture de sécurité.*
+- [ ] **Déploiement de LAPS** (Gestion sécurisée des mots de passe locaux).
+- [ ] **Activation de Credential Guard** (Protection de la mémoire LSASS).
+- [ ] **Ajout au groupe Protected Users** (Tickets Kerberos non réutilisables).
+- [ ] **Mode Restricted Admin** pour les sessions RDP.
+
+### 🏛️ PHASE 3 : GOUVERNANCE (Mois 2-6)
+*Sécurité pérenne et détection proactive.*
+- [ ] **Segmentation Tier 0 / 1 / 2** (Isolation des comptes sensibles).
+- [ ] **Déploiement d'un SIEM** et monitoring des Events **4768/4769**.
+- [ ] **Privilèges Just-In-Time (JIT)** pour les administrateurs.
 
 ---
 
-## 📁 Structure du Dépôt
+## ✅ VALIDATION DES CORRECTIFS (BEFORE / AFTER)
 
-```text
-Audit-AD-cybertechsali/
-├── README.md                                   # Ce fichier
-├── Rapport_Audit_AD_Final.pdf                  # Rapport complet (toutes les preuves)
-├── Preuves_Techniques/                         # Captures d'écran organisées
-│   ├── 01_PingCastle_Score55.png
-│   ├── 02_BloodHound_TierZero.png
-│   └── 03_Mimikatz_DCSync_Extraction.png
-└── Scripts_Remediation/                        # Automatisation des correctifs
-    ├── Disable_Spooler_Service.ps1
-    └── Apply_NTLM_Hardening_GPO.ps1
+La preuve par l'exemple : le test de régression après durcissement.
 
-
-🔒 Avertissement de Confidentialité
-⚠️ Ce projet est hautement confidentiel.
-Il contient des données sensibles (noms de domaine internes, hashs NTLM, configurations réseau et mots de passe partiels visibles dans les captures lab).
-Le dépôt doit rester en accès privé. Ne pas partager sur des plateformes publiques. Ce rapport est destiné à un usage en environnement de laboratoire ou à des fins de formation avancée en cybersécurité.
-
-👨‍💻 Auteur
-OUCHAHEd SALMA
-Cybersecurity engineer 
-LinkedIn | GitHub
-
-
-
+### AVANT (Vulnérabilité)
+```powershell
+# Mimikatz
+sekurlsa::pth /user:karim-adm /ntlm:fa7665befea243a5079d1c602f5524ce0 /run:cmd
+# ✅ Shell ADMIN obtenu en 30 secondes.
