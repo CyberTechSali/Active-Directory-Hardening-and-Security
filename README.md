@@ -84,6 +84,6 @@ klist
 # Tickets now use AES-256-CTS-HMAC-SHA1-96 encryption (OK)
 Audit enabled: Security events 4768 (TGT) and 4769 (TGS) are now successfully logged.
 
-https://Preuves/06_Remediation_Klist_Validation.png
-
+https://Preuves/06_Remediation_Klist_Validation.png[
+](https://github.com/CyberTechSali/Active-Directory-Hardening-and-Security/edit/main/Preuves/06_Remediation_Klist_Validation.png)
 
