@@ -9,7 +9,7 @@
 <p align="center">
   <b>Domain :</b> cybertechsali.com &nbsp;|&nbsp; 
   <b>Period :</b> Nov – Dec 2025 &nbsp;|&nbsp; 
-  <b>Author :</b> OUCHAHEd SALMA
+  <b>Author :</b> OUCHAHED SALMA
 </p>
 
 ---
@@ -82,3 +82,11 @@ This project is a complete security audit of the `cybertechsali.com` Active Dire
 ```powershell
 klist
 # Tickets now use AES-256-CTS-HMAC-SHA1-96 encryption (OK)
+Audit enabled: Security events 4768 (TGT) and 4769 (TGS) are now successfully logged.
+
+https://Preuves/06_Remediation_Klist_Validation.png
+
+Disclaimer
+⚠️ This project contains confidential information (internal domain names, NTLM hashes, network topology).
+The repository is private and must not be shared publicly.
+Intended for lab use or advanced cybersecurity training purposes only.
