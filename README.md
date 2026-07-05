@@ -46,7 +46,7 @@ This project is a complete security audit of the `cybertechsali.com` Active Dire
 
 | Finding | Screenshot |
 | :--- | :--- |
-| **PingCastle Score 55/100** | ![PingCastle](Preuves/01_PingCastle_Score55.png) |
+| **PingCastle Score 55/100** | ![PingCastle](preuves/01_PingCastle_Score55.png) |
 | **17 IOEs Detected (Purple Knight)** | ![Purple Knight](Preuves/02_PurpleKnight_IOEs.png) |
 | **BloodHound Attack Paths (Tier Zero)** | ![BloodHound](Preuves/03_BloodHound_TierZero.png) |
 | **DCSync Extraction (Mimikatz)** | ![Mimikatz DCSync](Preuves/04_Mimikatz_DCSync.png) |
