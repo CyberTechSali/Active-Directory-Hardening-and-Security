@@ -9,7 +9,7 @@
 <p align="center">
   <b>Domain :</b> cybertechsali.com &nbsp;|&nbsp; 
   <b>Period :</b> Nov – Dec 2025 &nbsp;|&nbsp; 
-  <b>Author :</b> OUCHAHED SALMA
+  <b>Author :</b> OUCHAHEd SALMA
 </p>
 
 ---
@@ -51,6 +51,9 @@ This project is a complete security audit of the `cybertechsali.com` Active Dire
 | **BloodHound Attack Paths (Tier Zero)** | ![BloodHound](Preuves/03_BloodHound_TierZero.png) |
 | **DCSync Extraction (Mimikatz)** | ![Mimikatz DCSync](Preuves/04_Mimikatz_DCSync.png) |
 | **Successful Pass-the-Hash (Admin Shell)** | ![Pass-the-Hash](Preuves/05_PassTheHash_Shell.png) |
+| **Kerberos Ticket Validation (klist)** | ![Klist Validation](Preuves/06_Remediation_Klist_Validation.png) |
+| **Event 4768 – TGT Request (Audit)** | ![Event 4768 TGT](Preuves/07_Event4768_TGT.png) |
+| **Event 4769 – TGS Request (Audit)** | ![Event 4769 TGS](Preuves/08_Event4769_TGS.png) |
 
 ---
 
@@ -78,12 +81,66 @@ This project is a complete security audit of the `cybertechsali.com` Active Dire
 | :--- | :--- |
 | `sekurlsa::pth /user:karim-adm /ntlm:fa7665bef... /run:cmd` <br> ✅ **Admin shell obtained** | `sekurlsa::pth /user:karim-adm /ntlm:fa7665bef... /run:cmd` <br> ❌ **Authentication failed – NTLM refused** |
 
-**Post-hardening Kerberos verification:**
-![Pass-the-Hash](Preuves/06_Remediation_Klist_Validation.png) 
-```powershell
-klist
-# Tickets now use AES-256-CTS-HMAC-SHA1-96 encryption (OK)
-Audit enabled: Security events 4768 (TGT) and 4769 (TGS) are now successfully logged.
+---
 
+### Post-Hardening Verification
 
+**1. Kerberos Ticket Encryption (klist)**
+The `klist` command confirms that all tickets are now issued with strong **AES-256-CTS-HMAC-SHA1-96** encryption.
 
+![Klist Validation](Preuves/06_Remediation_Klist_Validation.png)
+
+**2. Security Auditing & Traceability (Event Viewer)**
+To ensure detection capabilities are operational, the following critical security events are now successfully generated and logged on the Domain Controller:
+
+- **Event ID 4768** : *Kerberos authentication ticket (TGT) was requested.*
+  - *Purpose*: Detects initial authentication and TGT issuance.
+  
+  ![Event 4768 TGT](Preuves/07_Event4768_TGT.png)
+
+- **Event ID 4769** : *A Kerberos service ticket (TGS) was requested.*
+  - *Purpose*: Detects service access requests, crucial for identifying lateral movement (Pass-the-Ticket).
+  
+  ![Event 4769 TGS](Preuves/08_Event4769_TGS.png)
+
+---
+
+## Repository Structure
+
+```text
+Audit-AD-cybertechsali/
+├── README.md
+├── Rapport_Audit_AD_Final.pdf
+├── Preuves/                          # 📸 Screenshot folder
+│   ├── 01_PingCastle_Score55.png
+│   ├── 02_PurpleKnight_IOEs.png
+│   ├── 03_BloodHound_TierZero.png
+│   ├── 04_Mimikatz_DCSync.png
+│   ├── 05_PassTheHash_Shell.png
+│   ├── 06_Remediation_Klist_Validation.png
+│   ├── 07_Event4768_TGT.png          # 🆕 TGT Audit Log
+│   └── 08_Event4769_TGS.png          # 🆕 TGS Audit Log
+└── Scripts/
+    ├── Disable_Spooler.ps1
+    └── Apply_NTLM_Hardening.ps1
+```
+
+---
+
+## Disclaimer
+
+⚠️ **This project contains confidential information** (internal domain names, NTLM hashes, network topology).  
+The repository is **private** and must not be shared publicly.  
+Intended for lab use or advanced cybersecurity training purposes only.
+
+---
+
+## Author
+
+**OUCHAHEd SALMA**  
+*Cybersecurity Consultant – AD & Pentesting Specialist*  
+[LinkedIn](https://www.linkedin.com/) | [GitHub](https://github.com/)
+
+---
+
+*Last updated: July 2026*
