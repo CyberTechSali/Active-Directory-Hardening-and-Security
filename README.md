@@ -1,120 +1,115 @@
-# Active-Directory-Hardening-and-Security
+<p align="center">
+  <img src="https://img.shields.io/badge/Audit-Active%20Directory-blue?style=for-the-badge&logo=microsoft" alt="Active Directory"/>
+  <img src="https://img.shields.io/badge/Methodology-Offensive%20%26%20Defensive-red?style=for-the-badge&logo=datadog" alt="Offensive & Defensive"/>
+  <img src="https://img.shields.io/badge/Status-Correctifs%20Validés-brightgreen?style=for-the-badge" alt="Status"/>
+  <img src="https://img.shields.io/badge/Tools-PingCastle%20%7C%20BloodHound%20%7C%20Mimikatz-orange?style=for-the-badge&logo=security" alt="Tools"/>
+</p>
 
-# Active Directory Hardening and Security
-
-A production-ready framework for comprehensive Active Directory security 
-assessment, vulnerability demonstration, and hardening implementation.
-
-## 📊 Project Overview
-
-This repository documents a complete three-phase security audit of an Active 
-Directory environment (cybertechsali.com lab), demonstrating real-world attack 
-scenarios and proven remediation strategies.
-
-### Phase 1: Passive Assessment
-- **PingCastle v3.2.1**: Configuration audit → 55/100 risk score
-- **Purple Knight v2.1**: ANSSI/CIS compliance mapping
-- **17 Indicators of Exposure** identified
-
-### Phase 2: Active Reconnaissance  
-- **BloodHound v4.3.1**: Attack path cartography
-- **7+ paths to Domain Admin** discovered
-- **12 delegable accounts** (Kerberos delegation risk)
-
-### Phase 3: Controlled Exploitation
-- **Mimikatz v2.2.0**: Credential extraction (plaintext + NTLM + Kerberos)
-- **Pass-the-Ticket**: Lateral movement via Kerberos ticket injection
-- **Pass-the-Hash**: Administrator shell acquisition
-- **DCSync**: Complete domain secrets extraction
-- **Complete domain compromise in < 5 minutes**
-
-### Phase 4: Remediation & Validation
-- **Hardening GPO**: NTLM/LM restriction, Kerberos enforcement
-- **Protected Users**: Admin account protection
-- **SIEM Integration**: Event 4768/4769 monitoring
-- **Proof of Remediation**: Before/after validation
-
-## 🎯 Key Findings
-
-| Metric | Value |
-|---|---|
-| Initial Risk Score | 55/100 (HIGH) |
-| Critical Findings | 10 |
-| High Findings | 7 |
-| Attack Paths to DA | 7+ |
-| Compromise Time | < 5 minutes |
-| Detection Rate | 0 alerts |
-
-## 📁 Repository Structure
-├── Assessment/          PingCastle & Purple Knight reports
-├── Reconnaissance/      BloodHound analysis & attack paths
-├── Exploitation/        Mimikatz demonstrations & MITRE mapping
-├── Remediation/         GPO configs, scripts, validation
-├── Screenshots/         Evidence of each phase
-└── Docs/               Technical references & glossary
-
-## 🔐 Use Cases
-
-✅ Penetration Testing Reference  
-✅ Active Directory Hardening Guide  
-✅ Security Training & Education  
-✅ Compliance Assessment (ANSSI/CIS/ISO 27001)  
-✅ Red Team Strategy Development  
-✅ Blue Team Detection Improvement  
-
-## ⚠️ Disclaimer
-
-**Lab environment only.** This assessment was conducted on a controlled, 
-intentionally-weakened Active Directory domain for educational and 
-professional purposes. All demonstrated techniques are for authorized 
-security testing only.
-
-## 📚 Documentation
-
-- **Main Report**: AD_Security_Audit_and_Remediation_Report.md
-- **Attack Paths**: Comprehensive MITRE ATT&CK mapping
-- **Remediation Guide**: Step-by-step hardening with validation
-- **Technical References**: LSASS modules, Kerberos delegation, etc.
-
-## 🛠️ Tools & Versions
-
-- PingCastle 3.2.1
-- Purple Knight 2.1
-- BloodHound 4.3.1
-- SharpHound 1.1.1
-- Mimikatz 2.2.0
-
-## 📊 Compliance Mapping
-
-✅ ANSSI Recommendations (AD Hardening)  
-✅ CIS Benchmarks v1.3.1 (Windows Server 2019)  
-✅ NIST Cybersecurity Framework  
-✅ ISO 27001 Controls (A.9, A.10)  
-✅ MITRE ATT&CK Framework  
-
-## 📖 How to Use This Repository
-
-1. **Review the main report** for complete context
-2. **Study attack paths** to understand exploitation chain
-3. **Implement remediation** following the hardening guide
-4. **Validate fixes** using before/after screenshots
-5. **Adapt to your environment** using provided templates
-
-## 👤 Author
-
-[Your Name]  
-Security Researcher | Penetration Tester | Active Directory Specialist  
-Date: November-December 2025
-
-## 📞 Contact & Questions
-
-For questions or collaboration: [email/contact]
-
-## 📄 License
-
-[Choose: MIT / GPL-3.0 / CC-BY-4.0 / Proprietary]
+<h1 align="center">🛡️ Audit de Sécurité & Durcissement Active Directory</h1>
+<p align="center">
+  <b>Domaine :</b> cybertechsali.com &nbsp;|&nbsp; 
+  <b>Période :</b> Nov. 2025 - Déc. 2025 &nbsp;|&nbsp; 
+  <b>Auditeur :</b> OUCHAHEd SALMA
+</p>
 
 ---
 
-*This project demonstrates real-world security challenges and practical 
-solutions. Use responsibly and ethically.*
+## 📌 Contexte du Projet
+
+Ce projet consiste en un audit de sécurité complet de l'infrastructure Active Directory (AD) du domaine `cybertechsali.com`. L'objectif principal était d'évaluer la posture de sécurité actuelle, d'identifier les vecteurs d'attaque critiques et de proposer un plan de remédiation concret, allant de la théorie à la validation pratique des correctifs.
+
+L'audit a suivi une approche en trois phases :
+- **Évaluation automatisée** (PingCastle, Purple Knight)
+- **Exploitation pratique** (BloodHound, Mimikatz)
+- **Remédiation et validation** (GPO, durcissement NTLM/Kerberos)
+
+---
+
+## 🗺️ Périmètre Technique
+
+| Élément | Détail |
+| :--- | :--- |
+| **Domaine** | `cybertechsali.com` |
+| **Niveau fonctionnel** | Windows Server 2016 |
+| **Contrôleurs de domaine** | 1 (DC1 - `192.168.1.1`) |
+| **Poste compromis (Lab)** | 1 (POST55) |
+| **Comptes critiques testés** | `Administrator`, `karim-adm`, `sali-adm`, `hajar.lamini` |
+
+---
+
+## 🛠️ Stack Technique Utilisée
+
+L'audit a utilisé une stack d'outils de l'industrie pour garantir une couverture maximale (du statique à l'exploitation dynamique) :
+
+| Outil | Version | Rôle dans l'audit |
+| :--- | :--- | :--- |
+| **PingCastle** | 3.2.1+ | Analyse passive des risques et scoring global. |
+| **Purple Knight** | Community | Vérification de 118 indicateurs de sécurité (IOEs) et mapping avec le référentiel ANSSI. |
+| **BloodHound** | 8.3.1 (CE) | Cartographie des relations de confiance (Tier Zero) et visualisation des chemins d'attaque. |
+| **Mimikatz** | 2.2.0 | Extraction des secrets mémoire (credential dumping), DCSync, Pass-the-Hash/Ticket. |
+| **SharpHound** | 2.8.0 | Collecteur de données pour alimenter BloodHound. |
+
+---
+
+## 📊 Verdict Global & Scores
+
+La convergence des outils a classé l'infrastructure comme **"Critically At-Risk"** avant correction.
+
+| Outil | Score obtenu | Niveau de risque |
+| :--- | :--- | :--- |
+| **PingCastle** | **55 / 100** | 🔴 **Risque Élevé** (25ème-35ème percentile, très inférieur à la moyenne du secteur). |
+| **Purple Knight** | **82% (Grade C)** | 🟠 Faiblesses critiques de configuration (17 Indicateurs d'Exposition). |
+| **BloodHound** | 25 actifs Tier Zero | 🟣 5 comptes utilisateurs (dont Administrateur) identifiés comme cibles absolues. |
+| **Exploitation (Mimikatz)** | Compromis en < 5 min | 🔴 Extraction des hashs NTLM, tickets Kerberos et accès Admin sans connaître le mot de passe. |
+
+---
+
+## ⚠️ Top 3 des Vecteurs d'Attaque Démontrés
+
+L'exploitation pratique a validé 3 chaînes d'attaque indépendantes menant à la compromission totale :
+
+| # | Vecteur d'attaque | Temps d'exécution | Impact démontré |
+| :--- | :--- | :--- | :--- |
+| **1** | **Print Spooler → DCSync** | ~2 minutes | Extraction de tous les hashs du domaine via `lsadump::dcsync`. |
+| **2** | **Pass-the-Ticket (Kerberos)** | ~3 minutes | Impersonnalisation du compte `karim-adm` en injectant son TGT volé. |
+| **3** | **Pass-the-Hash (NTLM)** | ~30 secondes | Obtention d'un shell `cmd.exe` interactif sous l'identité `karim-adm` sans connaître le mot de passe. |
+
+---
+
+## 🛡️ Plan de Remédiation & Durcissement
+
+Face à ces risques, un plan de correction en trois phases a été établi et **partiellement validé en laboratoire** :
+
+| Phase | Délai | Actions menées | Statut |
+| :--- | :--- | :--- | :--- |
+| **Phase 1 (Urgent)** | Semaines 1-2 | 🔹 Désactivation du service Spooler sur le DC.<br>🔹 Activation du flag *"Account is sensitive and cannot be delegated"*.<br>🔹 Changement des mots de passe administrateurs.<br>🔹 Restriction de l'authentification à **Kerberos/AES-256 uniquement**. | ✅ **Appliqué & Validé** |
+| **Phase 2 (Structurel)** | Semaines 3-8 | 🔹 Déploiement de **Microsoft LAPS** (gestion des mots de passe locaux).<br>🔹 Activation de **Credential Guard** sur les postes.<br>🔹 Ajout des admins au groupe **Protected Users**.<br>🔹 Activation du mode *Restricted Admin* pour RDP. | ⏳ En cours d'implémentation |
+| **Phase 3 (Gouvernance)** | Mois 2-6 | 🔹 Implémentation du modèle d'administration **Tier 0/1/2**.<br>🔹 Déploiement d'un **SIEM** avec monitoring des Events 4768/4769.<br>🔹 Mise en place de l'approche **Just-In-Time (JIT)** admin. | 📅 Planifié |
+
+---
+
+## ✅ Validation des Correctifs (NTLM/Kerberos)
+
+Pour prouver l'efficacité du durcissement, des tests post-remédiation ont été menés :
+
+1. **Service KDC** : Vérifié comme opérationnel (`Running`) avec un DNS résolvant correctement les SRV records.
+2. **GPO dédiée** : Création de `GPO-Security-Authentication` (bonne pratique de ne pas toucher à la GPO Default Domain Policy).
+3. **Restriction NTLM** : Passage du paramètre *"LAN Manager Authentication Level"* à **"Send NTLMv2 response only. Refuse LM"**.
+4. **Validation Kerberos** : Exécution de `klist` confirmant que les tickets sont désormais émis avec du chiffrement **AES-256-CTS-HMAC-SHA1-96**.
+5. **Traçabilité SIEM** : Activation des audits de sécurité sur les événements **4768** (TGT) et **4769** (TGS), essentiels pour détecter les réutilisations de tickets.
+
+---
+
+## 📁 Structure du Dépôt
+
+```text
+Audit-AD-cybertechsali/
+├── README.md                                   # Ce fichier
+├── Rapport_Audit_AD_Final.pdf                  # Rapport complet (toutes les preuves)
+├── Preuves_Techniques/                         # Captures d'écran organisées
+│   ├── 01_PingCastle_Score55.png
+│   ├── 02_BloodHound_TierZero.png
+│   └── 03_Mimikatz_DCSync_Extraction.png
+└── Scripts_Remediation/                        # Automatisation des correctifs
+    ├── Disable_Spooler_Service.ps1
+    └── Apply_NTLM_Hardening_GPO.ps1
