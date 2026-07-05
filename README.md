@@ -79,7 +79,7 @@ This project is a complete security audit of the `cybertechsali.com` Active Dire
 | `sekurlsa::pth /user:karim-adm /ntlm:fa7665bef... /run:cmd` <br> ✅ **Admin shell obtained** | `sekurlsa::pth /user:karim-adm /ntlm:fa7665bef... /run:cmd` <br> ❌ **Authentication failed – NTLM refused** |
 
 **Post-hardening Kerberos verification:**
-
+![Pass-the-Hash](Preuves/06_Remediation_Klist_Validation.png) 
 ```powershell
 klist
 # Tickets now use AES-256-CTS-HMAC-SHA1-96 encryption (OK)
