@@ -138,7 +138,7 @@ Intended for lab use or advanced cybersecurity training purposes only.
 ## Author
 
 **OUCHAHEd SALMA**  
-*Cybersecurity Consultant – AD & Pentesting Specialist*  
+*Cybersecurity Engineer – AD & Pentesting Specialist*  
 [LinkedIn](https://www.linkedin.com/in/salma-ouchahed-652189206/) | [GitHub](https://github.com/CyberTechSali)
 
 ---
