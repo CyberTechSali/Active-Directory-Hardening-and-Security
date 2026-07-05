@@ -46,7 +46,7 @@ This project is a complete security audit of the `cybertechsali.com` Active Dire
 
 | Finding | Screenshot |
 | :--- | :--- |
-| **PingCastle Score 55/100** | ![PingCastle](preuves/01_PingCastle_Score55.png) |
+| **PingCastle Score 55/100** | ![PingCastle](Preuves/01_PingCastle_Score55.png) |
 | **17 IOEs Detected (Purple Knight)** | ![Purple Knight](Preuves/02_PurpleKnight_IOEs.png) |
 | **BloodHound Attack Paths (Tier Zero)** | ![BloodHound](Preuves/03_BloodHound_TierZero.png) |
 | **DCSync Extraction (Mimikatz)** | ![Mimikatz DCSync](Preuves/04_Mimikatz_DCSync.png) |
@@ -84,6 +84,6 @@ This project is a complete security audit of the `cybertechsali.com` Active Dire
 klist
 # Tickets now use AES-256-CTS-HMAC-SHA1-96 encryption (OK)
 Audit enabled: Security events 4768 (TGT) and 4769 (TGS) are now successfully logged.
-Preuves/06_Remediation_Klist_Validation.png
+
 
 
