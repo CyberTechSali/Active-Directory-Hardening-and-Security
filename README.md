@@ -9,7 +9,7 @@
 <p align="center">
   <b>Domain :</b> cybertechsali.com &nbsp;|&nbsp; 
   <b>Period :</b> Nov – Dec 2025 &nbsp;|&nbsp; 
-  <b>Author :</b> OUCHAHEd SALMA
+  <b>Author :</b> OUCHAHED SALMA
 </p>
 
 ---
@@ -139,7 +139,7 @@ Intended for lab use or advanced cybersecurity training purposes only.
 
 **OUCHAHEd SALMA**  
 *Cybersecurity Consultant – AD & Pentesting Specialist*  
-[LinkedIn](https://www.linkedin.com/) | [GitHub](https://github.com/)
+[LinkedIn](https://www.linkedin.com/in/salma-ouchahed-652189206/) | [GitHub](https://github.com/CyberTechSali)
 
 ---
 
