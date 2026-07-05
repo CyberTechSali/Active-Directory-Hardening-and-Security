@@ -14,7 +14,7 @@
 [![Documentation](https://img.shields.io/badge/Documentation-Complete-success?style=flat-square)](docs/)
 
 **Assessment Period:** November - December 2025  
-**Auditor:** Mohammed HABIB LAMINI  
+**Auditor:** Ouchahed salma
 **Organization:** CyberSecure Solutions
 
 ---
@@ -55,3 +55,7 @@ The cybertechsali.com Active Directory infrastructure presented a **CRITICAL sec
 ## 📊 Key Metrics
 
 ### Audit Scores
+
+PingCastle Assessment
+
+
