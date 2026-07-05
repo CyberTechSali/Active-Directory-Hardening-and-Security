@@ -1,167 +1,166 @@
-# 🔐 Audit de Sécurité Active Directory — cybertechsali.com
+# 🔐 Active Directory Security Audit
 
-> Un audit complet d'Active Directory documentant une exploitation réelle 
-> avec preuve de remédiation. Méthodologie rigoureuse + code + proof-of-concept.
+> A comprehensive security audit of an Active Directory environment with real exploitation proof and actionable remediation plan.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Status: Complete](https://img.shields.io/badge/Status-Complete-brightgreen)]()
 [![Level: Intermediate-Advanced](https://img.shields.io/badge/Level-Intermediate--Advanced-blue)]()
+[![PowerShell](https://img.shields.io/badge/PowerShell-Ready-green)]()
 
 ---
 
-## 📋 Table of Contents
-
-- [Overview](#overview)
-- [What's Inside](#whats-inside)
-- [Quick Start](#quick-start)
-- [Methodology](#methodology)
-- [Key Findings](#key-findings)
-- [Remediation](#remediation)
-- [Files & Structure](#files--structure)
-- [Tools Used](#tools-used)
-- [Usage & Attribution](#usage--attribution)
-
----
-
-## 🎯 Overview
-
-This repository documents a **complete security audit** of an Active Directory 
-environment (cybertechsali.com lab) including:
-
-- ✅ **Passive Audit** (PingCastle, Purple Knight)
-- ✅ **Active Reconnaissance** (BloodHound)
-- ✅ **Real Exploitation** (Mimikatz) — Pass-the-Ticket, Pass-the-Hash, DCSync
-- ✅ **Proof-of-Concept Remediation** (NTLM/Kerberos hardening validated)
-- ✅ **3-Phase Remediation Plan** (48 hours → 6 months)
-
-### Key Numbers
+## 📊 Quick Stats
 
 | Metric | Value |
 |--------|-------|
 | **Security Score** | 55/100 (CRITICAL) |
 | **Critical Findings** | 10 (PingCastle) |
-| **IOE Detected** | 17 (Purple Knight) |
-| **Attack Surface** | 4 vectors exploited |
-| **Time to Compromise** | < 5 minutes |
+| **Exposure Indicators** | 17 (Purple Knight) |
+| **Time to Full Compromise** | < 5 minutes |
 | **Exploitation Proof** | ✅ Real (Mimikatz) |
-| **Pages of Report** | 30+ |
+| **Remediation Plan** | ✅ 3 phases, 14 actions |
+| **Automation Scripts** | ✅ Phase 1, 2, 3 included |
+| **Ready for Production** | ✅ YES |
 
 ---
 
-## 📦 What's Inside
+## 🎯 Project Overview
 
-### Rapport Complet
-- **RAPPORT_AUDIT_AD_FINAL.md** — Rapport texte intégral
-- **RAPPORT_AUDIT_AD_FINAL.pdf** — PDF professionnel (impression)
-- **RAPPORT_AUDIT_AD_FINAL.docx** — Word (édition + personnalisation)
+This repository documents a **real-world Active Directory security audit** including:
 
-### Sections Clés
-1. **Résumé Exécutif** — Score, risques immédiats, impacts
-2. **Méthodologie** — 3 phases, outils, timeline
-3. **Findings Détaillés** — 10 critiques expliqués
-4. **Exploitation Réelle** — Mimikatz 7 étapes
-5. **Mouvement Latéral** — Pass-the-Ticket & Pass-the-Hash
-6. **Remédiation** — 14 actions sur 3 phases
-7. **Preuve de Concept** — Durcissement NTLM/Kerberos validé
-8. **Conclusions & Plan d'Action** — Prochaines étapes
+✅ **Passive Audit Phase**
+- PingCastle 3.2.0 security scan
+- Purple Knight exposure indicators
+- Comprehensive vulnerability assessment
 
-### Screenshots
-Evidence of exploitation from real Mimikatz sessions:
-- Administrator credentials extraction
-- Kerberos ticket export
-- DCSync execution
+✅ **Active Reconnaissance Phase**
+- BloodHound AD mapping
+- Attack path visualization
+- Privilege escalation routes
 
-### Tools & Scripts
-- PowerShell remediation scripts (Phase 1, 2, 3)
+✅ **Real Exploitation Phase**
+- Mimikatz credential extraction
+- Pass-the-Ticket attack (Kerberos)
+- Pass-the-Hash attack (NTLM)
+- DCSync domain secrets extraction
+- **Complete domain compromise in < 5 minutes PROVEN**
+
+✅ **Remediation Phase**
+- 3-phase action plan (48 hours → 6 months)
+- 14 detailed recommendations
+- PowerShell automation scripts
 - GPO templates (ready to deploy)
-- Validation scripts
+- Proof-of-concept validation
 
-### Documentation
-- Full methodology explanation
-- Technical glossary (Kerberos, NTLM, etc.)
-- References (MITRE ATT&CK, ANSSI, CIS)
+---
+
+## 📁 What's Inside
+
+### 📄 Complete Audit Report
+- **30+ pages** of detailed findings
+- Real screenshots from Mimikatz sessions
+- Attack chain explanation
+- Business impact analysis
+- Available in: PDF, Word (.docx), Markdown
+
+### 🔍 10 Critical Findings
+Each finding includes:
+- Description of vulnerability
+- Real exploitation proof
+- Business impact
+- MITRE ATT&CK mapping
+- Detailed remediation steps
+
+### 🛠️ Automation Tools
+**Phase 1 (URGENT — 48 hours):**
+- `remediation-phase1.ps1` — 6 immediate actions
+- `validation.ps1` — Verify remediation works
+- Results: 80% risk reduction
+
+**Phase 2 (Medium-term — 8 weeks):**
+- `deploy-laps.ps1` — Local Administrator Password Solution
+- `enable-credential-guard.ps1` — Isolate LSASS
+- Results: 95% risk reduction
+
+**Phase 3 (Long-term — 6 months):**
+- Tiering implementation guide
+- PAW deployment guide
+- SIEM setup instructions
+
+### 📋 GPO Templates
+- Ready-to-import XML template
+- Step-by-step deployment guide
+- Registry settings included
+- NTLM/LM disable configuration
+
+### 📚 Complete Documentation
+- Methodology explanation
+- Technical glossary
+- References (MITRE, ANSSI, CIS Benchmarks)
+- Troubleshooting guide
+- Rollback procedures
 
 ---
 
 ## 🚀 Quick Start
 
-### 1️⃣ Read the Full Report
-
-Start here for the complete picture:
+### 1️⃣ Read the Report (30 minutes)
 
 ```bash
-# Open the main report
-cat rapport/RAPPORT_AUDIT_AD_FINAL.md
+# View complete report
+cat report/AUDIT_REPORT_FINAL.md
 
-# Or download the PDF for printing
-# → rapport/RAPPORT_AUDIT_AD_FINAL.pdf
+# Or download PDF for printing
+# → report/AUDIT_REPORT_FINAL.pdf
 ```
 
-### 2️⃣ Understand the Findings
+### 2️⃣ Understand Key Findings (15 minutes)
 
-Quick navigation:
-- **Section 4** : 10 Critical Findings (explained)
-- **Section 6** : Real Exploitation (Mimikatz 7 steps)
-- **Section 7** : Lateral Movement (Pass-the-Ticket, Pass-the-Hash)
+- **Section 4** : 10 Critical Findings
+- **Section 6** : Real Exploitation (Mimikatz)
+- **Section 7** : Lateral Movement Techniques
 
-### 3️⃣ Review the Remediation Plan
+### 3️⃣ Review Remediation Plan (20 minutes)
 
-Priority phases:
-- **Phase 1 (48 hours)** : 6 actions = 80% risk reduction
-- **Phase 2 (8 weeks)** : LAPS, Credential Guard, MFA
-- **Phase 3 (6 months)** : Tiering, PAW, SIEM
+**Phase 1 (48 hours):**
+- Disable Print Spooler
+- Mark admin accounts non-delegable
+- Force Kerberos-only (disable NTLM/LM)
+- Increase password complexity
+- Enable AD audit
+- Configure Protected Users group
 
-### 4️⃣ Deploy Scripts (Optional)
+**Result: 80% of attack surface eliminated**
 
-```bash
-# Phase 1 remediation (urgent, low risk)
-.\tools\remediation-phase1.ps1
+### 4️⃣ Deploy Remediation (1-2 hours)
 
-# Validate remediation works
-.\tools\validation-remediation.ps1
+```powershell
+# Phase 1 (URGENT)
+cd scripts
+.\remediation-phase1.ps1
 
-# Deploy GPO
-Import-GPO -BackupGpoName "GPO-Securite-Auth" .\templates\
+# Validate it worked
+.\validation.ps1
+
+# Force GPO update
+gpupdate /force
+```
+
+### 5️⃣ Monitor Kerberos
+
+```powershell
+# Verify Kerberos TGT (should show valid ticket)
+klist
+
+# Check for NTLM events (should be zero)
+Get-EventLog -LogName Security -InstanceId 4776 -After (Get-Date).AddHours(-1)
 ```
 
 ---
 
-## 🔍 Methodology
+## 🔍 The Exploitation Chain
 
-### Phase 1: Passive Audit
-- **PingCastle 3.2.0** : Configuration scan → 10 findings
-- **Purple Knight 2.1.0** : Exposure indicators → 17 IOE detected
-- **Result** : Comprehensive baseline of vulnerabilities
+### Step 1: Local Admin Access (1 machine)
+- Get access to any Windows machine with admin rights
 
-### Phase 2: Active Reconnaissance
-- **BloodHound 4.1.0** : AD mapping → Attack paths visualized
-- **SharpHound 2.1.0** : Data collection
-- **Result** : Privilege escalation routes identified
-
-### Phase 3: Real Exploitation
-- **Mimikatz 2.2.0** : Credential extraction → PROVEN EXPLOITABLE
-- **Techniques** : 
-  - sekurlsa::logonpasswords (clear text)
-  - sekurlsa::tickets (Kerberos export)
-  - lsadump::dcsync (domain secrets)
-  - sekurlsa::pth (Pass-the-Hash)
-  - kerberos::ptt (Pass-the-Ticket)
-- **Result** : Complete domain compromise in < 5 minutes
-
-### Validation
-- All three tools (PingCastle, Purple Knight, Mimikatz) confirm same vulnerabilities
-- Confidence level: 100%
-
----
-
-## ⚠️ Key Findings at a Glance
-
-### Tier 0 Risks (Immediate Action Required)
-
-| # | Finding | Impact | MITRE |
-|---|---------|--------|-------|
-| 1 | Printer Spooler on DC | RPC → Domain Secrets | T1021.006 |
-| 2 | Admin Accounts Delegable | Kerberos Delegation → Impersonation | T1558 |
-| 3 | NTLM/LM Enabled | Pass-the-Hash possible | T1550.002 |
-
-### The Attack Chain (Real Proof)
+### Step 2: Extract Credentials (2 minutes)
