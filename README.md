@@ -113,3 +113,17 @@ Audit-AD-cybertechsali/
 └── Scripts_Remediation/                        # Automatisation des correctifs
     ├── Disable_Spooler_Service.ps1
     └── Apply_NTLM_Hardening_GPO.ps1
+
+
+🔒 Avertissement de Confidentialité
+⚠️ Ce projet est hautement confidentiel.
+Il contient des données sensibles (noms de domaine internes, hashs NTLM, configurations réseau et mots de passe partiels visibles dans les captures lab).
+Le dépôt doit rester en accès privé. Ne pas partager sur des plateformes publiques. Ce rapport est destiné à un usage en environnement de laboratoire ou à des fins de formation avancée en cybersécurité.
+
+👨‍💻 Auteur
+OUCHAHEd SALMA
+Cybersecurity engineer 
+LinkedIn | GitHub
+
+
+
